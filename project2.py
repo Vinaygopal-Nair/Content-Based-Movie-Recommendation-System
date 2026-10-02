@@ -14,6 +14,7 @@ Usage:
 import argparse
 import ast
 import re
+import os
 from difflib import get_close_matches
 from pathlib import Path
 
@@ -25,7 +26,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # --------------------------------------------------------------------------
 # Settings (change these, not the code below)
 # --------------------------------------------------------------------------
-DATA_DIR = Path(r"C:\Users\ronin\Desktop\dataset\TMDB")
+DATA_DIR = Path(os.environ.get("TMDB_DATA_DIR", "data"))
 MOVIES_CSV = DATA_DIR / "tmdb_5000_movies.csv"
 CREDITS_CSV = DATA_DIR / "tmdb_5000_credits.csv"
 
